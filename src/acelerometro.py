@@ -4,7 +4,7 @@ from machine import Pin, I2C
 
 class Acelerometro:
     def __init__(self, pinSda, pinScl):
-        i2c = I2C(0, sda=Pin(pinSda), scl=Pin(pinScl), freq=400000)
+        i2c = I2C(1, sda=Pin(pinSda), scl=Pin(pinScl), freq=400000)
         self.imu = MPU6050(i2c)
     def getAx(self):
         return round(self.imu.accel.x,2)

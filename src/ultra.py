@@ -1,7 +1,7 @@
 from machine import Pin
 import utime
 
-class HCSR04:
+class ULTRA:
     def __init__(self, trig_pin, echo_pin):
         self.trigger = Pin(trig_pin, Pin.OUT)
         self.echo = Pin(echo_pin, Pin.IN)
