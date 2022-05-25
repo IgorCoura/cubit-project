@@ -12,23 +12,37 @@ sensorUltra = ULTRA(trig_pin = 17, echo_pin = 16)
 sensorInfra = INFRA(pinOut= 21)
 sensorLuz = LUZ(pin=19)
 temp= TEMPERATURA()
-buz = BUZZER(pin = 20)
+buz = BUZZER(pin = 20,volumeMax = 30000, music = ["C7"] )
 tempo = TEMPO()
 ac = Acelerometro(pinSda = 14, pinScl = 15)
 tela = DISPLAY(pinSda = 0, pinScl = 1)
-tela.show()
+tela.show("feliz")
 
+i = 0
 while True:
     print("cm: ",sensorUltra.distance_cm())
     print("Infra: ", sensorInfra.getValue())
     print("Luz: ", sensorLuz.getValue())
     print("Temp: ", temp.getValue())
     print("Tempo: ", tempo.getTempoString())
-#    buz.toggle();
-    ax= ac.getAx()
+    
+    ax= ac.diff()
+    if(ax > 1.0):
+        buz.playsong("feliz")
     ay= ac.getAy()
     az= ac.getAz()
     print(ax,"\t",ay,"\t",az)
-    utime.sleep(1)
+    i += 1
+    if (i > 5):
+        i = 0
+    utime.sleep(0.1)
+
+# 
+# 
+# 
+# buz.playsong("init")
+# 
+# while True:
+#     
 
 
