@@ -33,6 +33,9 @@ Cubit, cubo interativo que reage a estimulos sensoriais, alterando sua emoções
 ## Ligações no Raspberry Pi Pico
 ![image](https://github.com/IgorCoura/cubit-project/blob/main/extra/img/esquma.png)
 
+###Video
+Link: https://github.com/IgorCoura/cubit-project/blob/main/extra/img/video.mp4
+
 ## Integrantes
 <p>Igor de Brito Coura</p>
 <p>Lucas Ribeiro Gonçalves</p>
