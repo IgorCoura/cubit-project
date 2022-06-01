@@ -1,6 +1,7 @@
 from machine import Pin, I2C
 from ssd1306 import SSD1306_I2C
 import framebuf
+import utime
 
 class DISPLAY:
     def __init__(self, pinSda, pinScl):

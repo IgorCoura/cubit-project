@@ -3,6 +3,9 @@ import machine
 class TEMPO:
     def __init__(self):
         self.rtc = machine.RTC()
+        
+    def getDateTime(self):
+        return self.rtc.datetime()
     
     def getTempoString(self):
         timestamp= self.rtc.datetime()

@@ -7,10 +7,15 @@ class Acelerometro:
         i2c = I2C(1, sda=Pin(pinSda), scl=Pin(pinScl), freq=400000)
         self.imu = MPU6050(i2c)
     def diff(self):
-        init = self.imu.accel.x
+        initX = self.imu.accel.x
+        initY = self.imu.accel.y
+        initZ = self.imu.accel.z
         sleep(0.05)
-        out = self.imu.accel.x
-        return round(out-init, 2)
+        resX = self.imu.accel.x - initX
+        resY = self.imu.accel.y - initY
+        resZ = self.imu.accel.z - initZ
+        result = (resX**2 + resY**2 + resZ**2)**(0.5)
+        return round(result, 2)
         
     def getAx(self):
         return round(self.imu.accel.x,2)
